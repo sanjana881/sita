@@ -1,0 +1,16 @@
+.box-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(240, 230, 230);
+    max-width: 80%;
+    margin: auto;
+    height: 80%;
+}
+.firstsection {
+    background-color: rgb(225, 88, 122);
+    height: 200px;
+}
+.text-small {
+    font-size: 22px;
+}

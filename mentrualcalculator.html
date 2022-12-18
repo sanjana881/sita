@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <h1 class="heading1">Menstrual Cycle Calculator</h1>
+    </head>
+    <form name="period_calculator">
+        <div class="row">
+            <div class="column">
+            <div class="centered">
+                <p id="rcorners2">
+        <label class="inputs" for="start_date">When did your last period start?<br>
+            <input name="start_date" id="start_date" type="date"> <br>
+            </label>
+                </p>
+        </div>
+        </div>
+        
+            <div class="column">
+                <div class="centered">
+                    <p id="rcorners2">
+                <label class="inputs" for="period_length">Your average period duration: <br>
+                    <input name="period_length"  id="period_length" type="number"><br>
+                </label>
+                    </p>
+            </div>
+        </div>
+        <div class="column">
+            <div class="centered">
+                <p id="rcorners2">
+                <label class="inputs" for="cycle_length">Average cycle length(days)
+                    <input name="cycle_length" id="cycle_length" onclick="countDays()" type="number"><br>   
+                </label>
+                </p>
+            </div>
+        </div>
+        <button type="button" onclick="countDays()">Submit</button> <br>
+        <br>
+        <label for="follicular_phase">
+            <button  class="btn">Your estimate follicular phase starts at:</label> 
+     
+      <span id="follicular_phase"></span> <br>
+
+      <br>
+      <label for="next_cycle">
+        <button class="btn">Estimate date of next period: </label>
+      <span id="next_cycle"></span> <br>
+      <br>
+      <label for="ovulation">
+        <button class="btn">Estimate date of next ovulation(most fertile period): </label>
+        
+      <span id="ovulation"></span> <br>
+      <br>
+      <label for="luteal_phase">
+        <button  class="btn">Estimate date of luteal phase: </label>
+      <span id="luteal_phase"></span> <br>
+<br>
+</div>
+<div class="footer">
+    <div class="footer" style="background-color:rgb(249, 249, 249);">
+        <div class="row1">
+    
+            <div class="column1">
+            <div class="centered">
+                  <a href="file:///C:/Users/LENOVO/menstrual_cycle.html"><button class="butn" type="button">Menstrual Phase</button></a>
+            </div>
+            </div>
+            <div class="column1">
+                <div class="centered">
+                    <a href="file:///C:/Users/LENOVO/follicular_phase.html"><button class="butn" type="button">Follicular Phase</button></a>
+          </div>
+          </div>
+          <div class="column1">
+            <div class="centered">
+                 <a href="file:///C:/Users/LENOVO/ovulation.html"><button class="butn" type="button">Ovulation Phase</button></a>
+            </div>
+            </div>
+            <div class="column1">
+                <div class="centered">
+                    <a href="file:///C:/Users/LENOVO/luteal_phase.html"><button class="butn" type="button">Luteal Phase</button></a>
+          </div>
+          </div>
+          
+    </div>
+<style>
+    
+    .column {
+  float: left;
+  width: 31.33%;
+  padding: 10px;
+}
+
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.butn{
+    font-size:20px;
+    font-family:'Geneva';
+    
+}
+.inputs{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 25px;
+}
+
+.heading1{
+    font-family:'Times New Roman', Times, serif;
+    text-align:center;
+   font-size:35px;
+}
+#rcorners2 {
+  border-radius: 25px;
+  border: 2px solid #ad2142;
+  padding: 20px 50px; 
+  width: 250px;
+  height: 100px;  
+  box-shadow: 10px 10px 5px lightblue;
+  text-align: center;
+}
+.column1 {
+  float: left;
+  width: 22%;
+  padding: 10px;
+  
+}
+
+
+.row1:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.footer {
+  background-color: rgb(500, 241, 241);
+  padding: 10px;
+  text-align: center;
+  color: rgb(221, 202, 202);
+}
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.btn {
+  background-color: hsl(336, 91%, 54%);
+  width:100%;
+  border: none;
+  color: rgb(244, 238, 240);
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+  font-family:'Lucida Sans';
+  font-size: 15px;
+}
+
+.btn:hover {opacity: 1}
+</style>
+
+        <script>
+            const second = 1000;
+            const minute = second * 60;
+            const hour = minute * 60;
+            const day = hour * 24;
+            
+            function countDays() {
+              let date_ini = new Date(document.period_calculator.start_date.value);
+              //let date_end=new Date(document.period_calculator.end_date.value);
+              //let date_next=new Date(document.period_calculator.next_cycle.value);
+
+              const d=new Date(date_ini);
+             const d1=new Date(date_ini);
+             const d2=new Date(date_ini);
+             const d3=new Date(date_ini);
+d.setDate(d.getDate()+9);
+d1.setDate(d1.getDate()+27);
+d2.setDate(d2.getDate()+14);
+d3.setDate(d3.getDate()+19);
+  document.getElementById("follicular_phase").innerText = d;
+  document.getElementById("next_cycle").innerText = d1;
+  document.getElementById("ovulation").innerText = d2;
+  document.getElementById("luteal_phase").innerText = d3;
+
+
+            }
+
+
+            </script>
+    </form>
+
+</html>
